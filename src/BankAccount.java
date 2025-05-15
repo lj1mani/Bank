@@ -1,5 +1,4 @@
 
-
 public class BankAccount {
 
     private int cardNumber;
@@ -11,6 +10,44 @@ public class BankAccount {
         this.holderName = holderName;
         this.balance = balance;
     }
+
+    public BankAccount() {
+        this.cardNumber = cardNumber;
+        this.holderName = holderName;
+        this.balance = balance;
+    }
+
+    ///////////////////////////// Making Account ////////////////////////////////////
+    public void makeAccount() {
+        while (true) {
+            try {
+                String cardNumberStr = javax.swing.JOptionPane.showInputDialog("Enter card number:");
+                if (cardNumberStr == null) return; // user cancelled
+                int cardNumber = Integer.parseInt(cardNumberStr);
+
+                String holderName = javax.swing.JOptionPane.showInputDialog("Enter your name:");
+                if (holderName == null || holderName.isEmpty()) {
+                    javax.swing.JOptionPane.showMessageDialog(null, "Name cannot be empty.");
+                    continue;
+                }
+
+                String balanceStr = javax.swing.JOptionPane.showInputDialog("Enter balance:");
+                if (balanceStr == null) return; // user cancelled
+                double balance = Double.parseDouble(balanceStr);
+
+                this.cardNumber = cardNumber;
+                this.holderName = holderName;
+                this.balance = balance;
+
+                javax.swing.JOptionPane.showMessageDialog(null, "Account created successfully!");
+                break;
+
+            } catch (NumberFormatException e) {
+                javax.swing.JOptionPane.showMessageDialog(null, "Please enter valid numbers for card and balance.");
+            }
+        }
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////
 
     public int getCardNumber() {
         return cardNumber;
