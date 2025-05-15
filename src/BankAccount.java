@@ -27,7 +27,7 @@ public class BankAccount {
     public void deposit() {
 
         String amount = javax.swing.JOptionPane.showInputDialog("Enter amount of money to deposit");
-        //double amount1 = Double.parseDouble(amount);
+
         if (amount == null) {
             return;
         }
@@ -46,7 +46,6 @@ public class BankAccount {
 
     public void withdraw() {
         String amount = javax.swing.JOptionPane.showInputDialog("Enter amount of money to withdraw");
-        //double amount1 = Double.parseDouble(amount);
 
         if (amount == null) {
             return;
