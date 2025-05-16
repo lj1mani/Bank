@@ -26,7 +26,7 @@ public class Main {
             try {
                 chois1 = Integer.parseInt(chois);
             } catch (NumberFormatException e) {
-                javax.swing.JOptionPane.showMessageDialog(null, "Please enter a valid number (1–4).");
+                javax.swing.JOptionPane.showMessageDialog(null, "Please enter a valid number (1–5).");
                 continue;
             }
 
