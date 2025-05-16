@@ -32,7 +32,7 @@ public class BankAccount {
                 }
 
                 String balanceStr = javax.swing.JOptionPane.showInputDialog("Enter balance:");
-                if (balanceStr == null) return; // user cancelled
+                if (balanceStr == null) return;
                 double balance = Double.parseDouble(balanceStr);
 
                 this.cardNumber = cardNumber;
@@ -71,7 +71,7 @@ public class BankAccount {
         try {
             double amount1 = Double.parseDouble(amount);
             if (amount1 > 0) {
-                balance += amount1;
+                this.balance += amount1;
                 javax.swing.JOptionPane.showMessageDialog(null, "Deposited $" + amount1);
             } else {
                 javax.swing.JOptionPane.showMessageDialog(null, "Invalid amount!");
@@ -91,7 +91,7 @@ public class BankAccount {
         try {
             double amount1 = Double.parseDouble(amount);
             if (amount1 > 0 && amount1 <= balance) {
-                balance -= amount1;
+                this.balance -= amount1;
                 javax.swing.JOptionPane.showMessageDialog(null, "Withdrawn $" + amount1);
             } else {
                 javax.swing.JOptionPane.showMessageDialog(null, "Invalid or insufficient amount!");
